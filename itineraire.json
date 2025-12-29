@@ -1,0 +1,419 @@
+{
+  "pays": "France",
+  "drapeau": "🇫🇷",
+  "symbole": "🥐",
+  "titre": "Évasion Normande: Douceur et Patrimoine",
+  "budget_total": "4200€",
+  "duree": "16 jours",
+  "temps_vol": "14h depuis Letellier, canada",
+  "escale": "1",
+  "jours": [
+    {
+      "jour": 1,
+      "symbole": "🛬",
+      "titre": "Arrivée en Normandie et Douceur Honfleuraise",
+      "legende": "Après un long voyage, la première journée est dédiée à la détente. Arrivée à Paris, puis transfert vers la charmante ville portuaire de Honfleur. Installation et première immersion dans l'ambiance paisible de la Côte Fleurie.",
+      "lieu": "Honfleur",
+      "activites": [
+        "<strong>🛬 Arrivée à Paris (CDG):</strong> Transfert en train vers la gare de Deauville-Trouville, puis taxi ou bus vers Honfleur.",
+        "<strong>🛏️ Installation à l'hôtel:</strong> Reposez-vous et installez-vous confortablement dans votre hébergement.",
+        "<strong>🚶‍♀️ Balade relaxante sur le Vieux Bassin:</strong> Flânez le long du port pittoresque de Honfleur, admirez les maisons colorées et imprégnez-vous de l'atmosphère artistique."
+      ],
+      "illustration": "honfleur_vieux_bassin.jpg",
+      "encarts": [
+        {
+          "symbole": "ℹ️",
+          "titre": "Transfert",
+          "texte": "Le trajet de CDG à Honfleur prend environ 3-4 heures. Prévoyez un billet de train Paris Saint-Lazare - Deauville/Trouville."
+        }
+      ]
+    },
+    {
+      "jour": 2,
+      "symbole": "🎨",
+      "titre": "Charme d'Honfleur et Plage de Trouville",
+      "legende": "Découvrez les ruelles pavées d'Honfleur, ses galeries d'art et son église unique. L'après-midi, profitez de la plage et de l'ambiance balnéaire de Trouville-sur-Mer, à quelques kilomètres.",
+      "lieu": "Honfleur & Trouville-sur-Mer",
+      "activites": [
+        "<strong>⛪ Visite de l'Église Sainte-Catherine:</strong> Admirez cette église en bois, chef-d'œuvre de l'architecture navale.",
+        "<strong>🖼️ Exploration des galeries d'art:</strong> Honfleur est un repaire d'artistes, parfait pour une balade culturelle douce.",
+        "<strong>🏖️ Détente sur la plage de Trouville:</strong> Profitez de l'air marin et d'une promenade relaxante sur les célèbres planches."
+      ],
+      "illustration": "trouville_plage.jpg",
+      "encarts": [
+        {
+          "symbole": "🚶‍♀️",
+          "titre": "Accès Trouville",
+          "texte": "Un service de bus régulier relie Honfleur à Trouville/Deauville, facilitant les déplacements sans voiture."
+        }
+      ]
+    },
+    {
+      "jour": 3,
+      "symbole": "🌸",
+      "titre": "Jardins et Douceur de Deauville",
+      "legende": "Matinée dédiée à la beauté florale d'un jardin local, suivie d'une après-midi chic et relaxante à Deauville. Profitez de l'élégance de cette station balnéaire.",
+      "lieu": "Deauville & Pont-l'Évêque",
+      "activites": [
+        "<strong>🌷 Visite des Jardins du Pays d'Auge:</strong> Un havre de paix avec des jardins thématiques, idéal pour une promenade méditative.",
+        "<strong>🚶‍♀️ Balade sur les Planches de Deauville:</strong> Découvrez les célèbres cabines de plage et l'architecture Belle Époque.",
+        "<strong>☕ Pause gourmande à Deauville:</strong> Savourez une pâtisserie ou un café dans un salon de thé élégant."
+      ],
+      "illustration": "deauville_planches.jpg",
+      "encarts": [
+        {
+          "symbole": "🚗",
+          "titre": "Transport",
+          "texte": "La location d'une voiture est recommandée pour explorer les jardins et les environs de manière flexible."
+        }
+      ]
+    },
+    {
+      "jour": 4,
+      "symbole": "🧀",
+      "titre": "Route du Cidre et Dégustation Locale",
+      "legende": "Partez à la découverte de l'arrière-pays normand, réputé pour ses produits cidricoles. Visitez une ferme traditionnelle et dégustez les saveurs authentiques de la région.",
+      "lieu": "Cambremer & Beuvron-en-Auge",
+      "activites": [
+        "<strong>🍎 Visite d'une cidrerie:</strong> Découvrez le processus de fabrication du cidre et du Calvados, avec dégustation.",
+        "<strong>🚶‍♂️ Promenade dans Beuvron-en-Auge:</strong> Classé parmi les \"Plus Beaux Villages de France\", idéal pour une balade paisible.",
+        "<strong>🍽️ Dégustation de produits locaux:</strong> Profitez d'un déjeuner dans une auberge proposant des spécialités normandes."
+      ],
+      "illustration": "route_cidre.jpg",
+      "encarts": [
+        {
+          "symbole": "💡",
+          "titre": "Conseil",
+          "texte": "De nombreuses fermes proposent des visites guidées et des dégustations, parfait pour une immersion culturelle et gourmande."
+        }
+      ]
+    },
+    {
+      "jour": 5,
+      "symbole": "🌊",
+      "titre": "Falaises d'Étretat et Jardins Suspendus",
+      "legende": "Changement de décor avec les majestueuses falaises d'Étretat. Profitez d'une balade revigorante le long des sentiers côtiers et découvrez les jardins uniques surplombant la mer.",
+      "lieu": "Étretat",
+      "activites": [
+        "<strong>🚶‍♀️ Randonnée douce sur les falaises d'Étretat:</strong> Admirez la Porte d'Aval et la Porte d'Amont, symboles de la côte d'Albâtre.",
+        "<strong>🌸 Visite des Jardins d'Étretat:</strong> Des jardins contemporains offrant des vues imprenables sur les falaises et la Manche.",
+        "<strong>🍽️ Dîner avec vue sur mer:</strong> Savourez un repas dans un restaurant local avec panorama sur les célèbres arches."
+      ],
+      "illustration": "etretat_falaises.jpg",
+      "encarts": [
+        {
+          "symbole": "⚠️",
+          "titre": "Prudence",
+          "texte": "Restez sur les sentiers balisés et soyez attentif aux marées si vous descendez sur la plage."
+        }
+      ]
+    },
+    {
+      "jour": 6,
+      "symbole": "⚓",
+      "titre": "Fécamp, Cité des Terre-Neuvas et Palais Bénédictine",
+      "legende": "Découvrez Fécamp, son riche passé maritime et son impressionnant Palais Bénédictine. Une journée entre histoire, architecture et dégustation d'une liqueur unique.",
+      "lieu": "Fécamp",
+      "activites": [
+        "<strong>🏛️ Visite du Palais Bénédictine:</strong> Explorez ce chef-d'œuvre architectural et découvrez les secrets de la liqueur Bénédictine.",
+        "<strong>🚶‍♂️ Promenade sur le port de Fécamp:</strong> Imprégnez-vous de l'ambiance de cette ancienne cité de pêcheurs.",
+        "<strong>⛪ Découverte de l'Abbatiale de la Sainte-Trinité:</strong> Un édifice religieux imposant témoignant de l'histoire de la ville."
+      ],
+      "illustration": "fecamp_palais_benedictine.jpg",
+      "encarts": [
+        {
+          "symbole": "🥃",
+          "titre": "Dégustation",
+          "texte": "Le Palais Bénédictine propose des dégustations de sa célèbre liqueur, une expérience gustative unique."
+        }
+      ]
+    },
+    {
+      "jour": 7,
+      "symbole": "🌳",
+      "titre": "Toussaint et Campagne Normande",
+      "legende": "Une journée plus calme pour explorer la commune de Toussaint et ses environs. Profitez de la tranquillité de la campagne normande, de ses paysages verdoyants et de ses petits villages.",
+      "lieu": "Toussaint & environs",
+      "activites": [
+        "<strong>🚶‍♀️ Balade dans la campagne de Toussaint:</strong> Découvrez les chemins ruraux, les champs et les fermes typiques de la région.",
+        "<strong>🧺 Pique-nique champêtre:</strong> Profitez d'un déjeuner en pleine nature avec des produits locaux achetés sur un marché.",
+        "<strong>⛪ Visite d'une petite église locale:</strong> Admirez l'architecture romane ou gothique des églises de village."
+      ],
+      "illustration": "toussaint_campagne.jpg",
+      "encarts": [
+        {
+          "symbole": "🧘‍♀️",
+          "titre": "Détente",
+          "texte": "Cette journée est parfaite pour se ressourcer loin de l'agitation, en profitant du calme de la nature."
+        }
+      ]
+    },
+    {
+      "jour": 8,
+      "symbole": "🏰",
+      "titre": "Transfert vers Bayeux et Tapisserie Historique",
+      "legende": "Quittez la Côte d'Albâtre pour rejoindre Bayeux, ville historique du Calvados. Installation et première immersion dans l'histoire médiévale avec la célèbre Tapisserie.",
+      "lieu": "Bayeux",
+      "activites": [
+        "<strong>🚗 Trajet vers Bayeux:</strong> Profitez des paysages changeants de la Normandie lors de ce transfert d'environ 2h.",
+        "<strong>🛏️ Installation à l'hôtel:</strong> Prenez le temps de vous installer dans votre nouvel hébergement à Bayeux.",
+        "<strong>📜 Visite de la Tapisserie de Bayeux:</strong> Admirez cette œuvre d'art unique racontant la conquête de l'Angleterre par Guillaume le Conquérant."
+      ],
+      "illustration": "bayeux_tapisserie.jpg",
+      "encarts": [
+        {
+          "symbole": "🎧",
+          "titre": "Audio-guide",
+          "texte": "Un audio-guide est inclus avec l'entrée de la Tapisserie de Bayeux et est fortement recommandé pour comprendre l'histoire."
+        }
+      ]
+    },
+    {
+      "jour": 9,
+      "symbole": "🕊️",
+      "titre": "Plages du Débarquement et Recueillement",
+      "legende": "Une journée dédiée à la mémoire et au recueillement sur les plages du Débarquement. Des lieux chargés d'histoire qui invitent à la contemplation et au respect.",
+      "lieu": "Arromanches-les-Bains & Colleville-sur-Mer",
+      "activites": [
+        "<strong>⚓ Découverte d'Arromanches-les-Bains:</strong> Observez les vestiges du port artificiel Mulberry B, témoin de l'ingéniosité alliée.",
+        "<strong>🚶‍♀️ Promenade sur Omaha Beach:</strong> Une plage emblématique pour une marche méditative et respectueuse.",
+        "<strong>🇺🇸 Visite du Cimetière Américain de Colleville-sur-Mer:</strong> Un lieu de mémoire poignant et émouvant, offrant une vue imprenable sur la mer."
+      ],
+      "illustration": "omaha_beach.jpg",
+      "encarts": [
+        {
+          "symbole": "🙏",
+          "titre": "Respect",
+          "texte": "Ces lieux sont des sites de mémoire. Adoptez une attitude respectueuse et silencieuse."
+        }
+      ]
+    },
+    {
+      "jour": 10,
+      "symbole": "⛪",
+      "titre": "Cathédrale de Bayeux et Jardin Botanique",
+      "legende": "Explorez la magnifique Cathédrale de Bayeux, chef-d'œuvre de l'art roman et gothique. L'après-midi, détendez-vous dans le paisible jardin botanique de la ville.",
+      "lieu": "Bayeux",
+      "activites": [
+        "<strong>⛪ Visite de la Cathédrale Notre-Dame de Bayeux:</strong> Admirez son architecture impressionnante et ses détails sculptés.",
+        "<strong>🚶‍♀️ Balade dans le centre historique de Bayeux:</strong> Découvrez les maisons à pans de bois et les ruelles charmantes.",
+        "<strong>🌳 Détente au Jardin Botanique de Bayeux:</strong> Un espace vert paisible pour une promenade relaxante et l'observation de la nature."
+      ],
+      "illustration": "bayeux_cathedrale.jpg",
+      "encarts": [
+        {
+          "symbole": "💡",
+          "titre": "Astuce",
+          "texte": "Ne manquez pas de lever les yeux pour admirer les gargouilles et les détails architecturaux de la cathédrale."
+        }
+      ]
+    },
+    {
+      "jour": 11,
+      "symbole": "🏝️",
+      "titre": "Îles Chausey: Évasion Marine",
+      "legende": "Embarquez pour une journée d'évasion vers les îles Chausey, un archipel granitique préservé. Profitez de la nature sauvage, des plages de sable fin et de l'air pur.",
+      "lieu": "Granville & Îles Chausey",
+      "activites": [
+        "<strong>🚢 Traversée en bateau vers les îles Chausey:</strong> Une mini-croisière pour admirer les paysages marins.",
+        "<strong>🚶‍♀️ Randonnée douce sur l'île principale:</strong> Explorez les sentiers, les plages et les criques isolées.",
+        "<strong>🧺 Pique-nique sur la plage:</strong> Savourez un repas en pleine nature, face à la mer."
+      ],
+      "illustration": "iles_chausey.jpg",
+      "encarts": [
+        {
+          "symbole": "⏰",
+          "titre": "Horaires",
+          "texte": "Vérifiez les horaires des marées et des bateaux au départ de Granville, car ils peuvent varier."
+        }
+      ]
+    },
+    {
+      "jour": 12,
+      "symbole": "⛰️",
+      "titre": "Mont Saint-Michel, Merveille de l'Occident",
+      "legende": "Une journée inoubliable dédiée à la visite du Mont Saint-Michel, classé au patrimoine mondial de l'UNESCO. Explorez l'abbaye et les ruelles médiévales de cette île emblématique.",
+      "lieu": "Mont Saint-Michel",
+      "activites": [
+        "<strong>🚌 Accès au Mont Saint-Michel:</strong> Utilisez les navettes gratuites depuis les parkings pour rejoindre le Mont.",
+        "<strong>⛪ Visite de l'Abbaye du Mont Saint-Michel:</strong> Découvrez ce chef-d'œuvre architectural et son histoire fascinante.",
+        "<strong>🚶‍♂️ Flânerie dans les ruelles du village:</strong> Perdez-vous dans les petites rues et admirez les vues panoramiques."
+      ],
+      "illustration": "mont_saint_michel.jpg",
+      "encarts": [
+        {
+          "symbole": "👟",
+          "titre": "Chaussures",
+          "texte": "Prévoyez de bonnes chaussures de marche, car la visite du Mont Saint-Michel implique de nombreuses marches et escaliers."
+        }
+      ]
+    },
+    {
+      "jour": 13,
+      "symbole": "🏛️",
+      "titre": "Retour vers l'Est et Rouen, Ville aux Cent Clochers",
+      "legende": "Quittez Bayeux pour rejoindre Rouen, capitale historique de la Normandie. Découvrez son centre médiéval, sa cathédrale majestueuse et son histoire liée à Jeanne d'Arc.",
+      "lieu": "Rouen",
+      "activites": [
+        "<strong>🚗 Trajet vers Rouen:</strong> Environ 1h30 de route depuis Bayeux.",
+        "<strong>🛏️ Installation à l'hôtel:</strong> Prenez le temps de vous installer dans votre hébergement rouennais.",
+        "<strong>⛪ Visite de la Cathédrale Notre-Dame de Rouen:</strong> Admirez sa façade gothique immortalisée par Monet."
+      ],
+      "illustration": "rouen_cathedrale.jpg",
+      "encarts": [
+        {
+          "symbole": "🚶‍♀️",
+          "titre": "Centre-ville",
+          "texte": "Le centre historique de Rouen est piétonnier, idéal pour une exploration à pied."
+        }
+      ]
+    },
+    {
+      "jour": 14,
+      "symbole": "🌸",
+      "titre": "Giverny, sur les Traces de Monet",
+      "legende": "Une journée dédiée à l'art et à la nature avec la visite des célèbres jardins de Claude Monet à Giverny. Une expérience immersive dans l'univers impressionniste.",
+      "lieu": "Giverny",
+      "activites": [
+        "<strong>🚗 Trajet vers Giverny:</strong> Environ 45 minutes de route depuis Rouen.",
+        "<strong>🎨 Visite de la Fondation Claude Monet:</strong> Explorez la maison du peintre et ses magnifiques jardins, source d'inspiration de ses Nymphéas.",
+        "<strong>🚶‍♀️ Promenade dans le village de Giverny:</strong> Découvrez les galeries d'art et l'ambiance bucolique du village."
+      ],
+      "illustration": "giverny_monet.jpg",
+      "encarts": [
+        {
+          "symbole": "🎟️",
+          "titre": "Réservation",
+          "texte": "Il est fortement recommandé de réserver vos billets pour la Fondation Monet à l'avance, surtout en haute saison."
+        }
+      ]
+    },
+    {
+      "jour": 15,
+      "symbole": "🗼",
+      "titre": "Retour à Paris et Douceur Parisienne",
+      "legende": "Retour vers la capitale française pour une dernière journée de détente. Profitez de l'ambiance parisienne, d'une balade le long de la Seine ou d'une visite de quartier.",
+      "lieu": "Paris",
+      "activites": [
+        "<strong>🚆 Trajet vers Paris:</strong> Retour en train depuis Vernon-Giverny ou Rouen vers Paris Saint-Lazare.",
+        "<strong>🛏️ Installation à l'hôtel:</strong> Déposez vos bagages et préparez-vous pour une dernière soirée parisienne.",
+        "<strong>🚶‍♀️ Balade le long de la Seine ou dans un quartier:</strong> Profitez d'une promenade relaxante dans le Marais ou sur les quais de Seine."
+      ],
+      "illustration": "paris_seine.jpg",
+      "encarts": [
+        {
+          "symbole": "🛍️",
+          "titre": "Souvenirs",
+          "texte": "Profitez de cette dernière journée pour acheter quelques souvenirs de votre voyage en France."
+        }
+      ]
+    },
+    {
+      "jour": 16,
+      "symbole": "🛫",
+      "titre": "Départ de Paris",
+      "legende": "C'est le moment de dire au revoir à la France. Transfert vers l'aéroport de Paris Charles de Gaulle pour votre vol retour vers le Canada, la tête pleine de souvenirs normands.",
+      "lieu": "Paris (CDG)",
+      "activites": [
+        "<strong>🥐 Petit-déjeuner français:</strong> Savourez un dernier croissant et café avant le départ.",
+        "<strong>✈️ Transfert vers l'aéroport CDG:</strong> Prévoyez suffisamment de temps pour le trajet et les formalités d'embarquement.",
+        "<strong>🛫 Vol retour vers Letellier, Canada:</strong> Fin de votre magnifique voyage en Normandie."
+      ],
+      "illustration": "paris_aeroport.jpg",
+      "encarts": [
+        {
+          "symbole": "⏰",
+          "titre": "Heure de départ",
+          "texte": "Vérifiez l'heure de votre vol et prévoyez une marge confortable pour le transfert et l'enregistrement."
+        }
+      ]
+    }
+  ],
+  "detail_budget": [
+    {
+      "titre": "Budget vol:",
+      "legende": "633 €/pers (A/R Letellier-Paris)",
+      "symbole": "🛬"
+    },
+    {
+      "titre": "Budget transports:",
+      "legende": "Env. 1000 €/pers (trains, location voiture 14j, essence, taxis)",
+      "symbole": "🚆"
+    },
+    {
+      "titre": "Budget repas:",
+      "legende": "Env. 720 €/pers (16 jours à 45€/jour en moyenne)",
+      "symbole": "🥗"
+    },
+    {
+      "titre": "Budget logement:",
+      "legende": "Env. 1500 €/pers (15 nuits à 100€/nuit en 3* en moyenne)",
+      "symbole": "🛏️"
+    },
+    {
+      "titre": "Budget activités:",
+      "legende": "Env. 300 €/pers (musées, jardins, Mont Saint-Michel, etc.)",
+      "symbole": "🎭"
+    }
+  ],
+  "periodes_ideales": [
+    {
+      "titre": "Mai à Septembre",
+      "symbole": "☀️"
+    }
+  ],
+  "infos_pratiques": [
+    {
+      "titre": "En mai, les températures en Normandie varient entre 10 et 18°C. Prévoir des couches de vêtements, un imperméable et des chaussures confortables.",
+      "symbole": "🌦️"
+    },
+    {
+      "titre": "La monnaie est l'Euro (€). Les cartes de crédit sont largement acceptées. Prévoir un peu de liquide pour les petits commerces ou marchés.",
+      "symbole": "💳"
+    },
+    {
+      "titre": "Un permis de conduire canadien est suffisant pour louer une voiture en France. La conduite se fait à droite, et les vitesses sont en km/h.",
+      "symbole": "🚗"
+    },
+    {
+      "titre": "Une carte SIM locale ou une eSIM est recommandée pour la navigation GPS et les communications. Le Wi-Fi est généralement disponible dans les hébergements.",
+      "symbole": "📶"
+    },
+    {
+      "titre": "Apprenez quelques mots de français (bonjour, merci, s'il vous plaît). Cela sera très apprécié par les locaux.",
+      "symbole": "🗣️"
+    }
+  ],
+  "liens_utiles": [
+    {
+      "legende": "Vols",
+      "titre": "Réserve ton vol",
+      "url": "https://www.kayak.fr/flights/YWG-CDG/2026-05-15/2026-05-31",
+      "symbole": "🛬"
+    },
+    {
+      "legende": "Infos officielles et inspirations",
+      "titre": "Tourisme Normandie",
+      "url": "https://www.normandie-tourisme.fr/",
+      "symbole": "📘"
+    },
+    {
+      "legende": "Horaires des transports",
+      "titre": "SNCF Connect (trains)",
+      "url": "https://www.sncf-connect.com/",
+      "symbole": "🚆"
+    },
+    {
+      "legende": "Météo",
+      "titre": "Météo France",
+      "url": "https://www.meteofrance.com/",
+      "symbole": "🌤️"
+    },
+    {
+      "legende": "Location de voiture",
+      "titre": "Rentalcars.com",
+      "url": "https://www.rentalcars.com/",
+      "symbole": "🚗"
+    }
+  ]
+}

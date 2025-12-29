@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Voyage - Toussaint france</title>
+  <style>
+    :root { --primary: #1a73e8; --bg-sidebar: #ffffff; }
+    body { margin: 0; padding: 0; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; display: flex; height: 100vh; overflow: hidden; color: #333; }
+    
+    #sidebar { width: 400px; background: var(--bg-sidebar); height: 100%; overflow-y: auto; box-shadow: 4px 0 15px rgba(0,0,0,0.08); z-index: 10; display: flex; flex-direction: column; transition: all 0.3s ease; }
+    .sidebar-header { padding: 20px; border-bottom: 1px solid #eee; background: #fff; position: sticky; top: 0; z-index: 5; }
+    #poi-content { flex-grow: 1; display: flex; flex-direction: column; }
+    #map { flex: 1; height: 100%; position: relative; }
+    
+    .filter-group { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+    .filter-btn { padding: 8px 14px; border: 1px solid #dfe1e5; border-radius: 8px; background: white; cursor: pointer; font-size: 13px; font-weight: 500; }
+    .filter-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+    .poi-detail { position: relative; display: flex; flex-direction: column; animation: fadeIn 0.3s; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    .close-details { position: absolute; top: 15px; right: 15px; background: rgba(0,0,0,0.5); color: white; border: none; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; z-index: 10; font-size: 18px; display: flex; align-items: center; justify-content: center; }
+    
+    .poi-image { width: 100%; height: 250px; object-fit: cover; background: #eee; }
+    .poi-body { padding: 20px; }
+    .poi-body h2 { margin: 0 0 10px 0; font-size: 22px; }
+    .badge-container { margin-bottom: 12px; }
+    .badge { display: inline-block; background: #f1f3f4; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 700; text-transform: uppercase; margin-right: 5px; }
+    .badge-day { background: #e8f0fe; color: var(--primary); }
+    .poi-description { font-size: 15px; line-height: 1.6; color: #444; margin-bottom: 25px; }
+    
+    .btn-group { display: flex; gap: 10px; padding: 0 20px 20px 20px; }
+    .btn { flex: 1; text-align: center; padding: 14px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 14px; }
+    .btn-main { background: var(--primary); color: white; }
+    .btn-outline { border: 1px solid #dadce0; color: #1a73e8; }
+
+    .placeholder { padding: 40px 20px; text-align: center; color: #70757a; font-size: 14px; }
+
+    @media (max-width: 768px) {
+      body { flex-direction: column-reverse; }
+      #sidebar { width: 100%; height: auto; min-height: 100px; max-height: 60%; }
+      #sidebar.expanded { height: 60%; }
+      #map { height: auto; flex-grow: 1; }
+      .placeholder { display: none; } /* Masqué sur mobile comme demandé */
+      .poi-image { height: 180px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="sidebar">
+    <div class="sidebar-header">
+      <h3 style="margin:0; font-size: 16px;">Toussaint france</h3>
+      <div class="filter-group" id="day-filters">
+        <button class="filter-btn active" onclick="filterByDay('all', this)">Tous</button>
+      </div>
+    </div>
+    <div id="poi-content">
+      <div class="placeholder">Cliquez sur une étape pour voir le programme.</div>
+    </div>
+  </div>
+
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
+  <script>
+    let map, markerCluster;
+    let markersArray = [];
+    const locations = [{"lat":49.418762,"lng":0.233262,"name":"Honfleur","jour":1,"titre":"Arrivée en Normandie et Douceur Honfleuraise","type":"activité","markerColor":"blue","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=49.418762,0.233262&key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=49.418762,0.233262"},{"lat":49.3809371,"lng":0.1008534,"name":"Honfleur & Trouville-sur-Mer","jour":2,"titre":"Charme d'Honfleur et Plage de Trouville","type":"activité","markerColor":"blue","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=49.3809371,0.1008534&key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=49.3809371,0.1008534"},{"lat":49.353976,"lng":0.075122,"name":"Deauville & Pont-l'Évêque","jour":3,"titre":"Jardins et Douceur de Deauville","type":"activité","markerColor":"blue","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=49.353976,0.075122&key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=49.353976,0.075122"},{"lat":49.187461,"lng":-0.047156,"name":"Cambremer & Beuvron-en-Auge","jour":4,"titre":"Route du Cidre et Dégustation Locale","type":"activité","markerColor":"blue","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=49.187461,-0.047156&key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=49.187461,-0.047156"},{"lat":49.7070069,"lng":0.2055978,"name":"Étretat","jour":5,"titre":"Falaises d'Étretat et Jardins Suspendus","type":"activité","markerColor":"blue","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=49.7070069,0.2055978&key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=49.7070069,0.2055978"},{"lat":49.755601,"lng":0.380774,"name":"Fécamp","jour":6,"titre":"Fécamp, Cité des Terre-Neuvas et Palais Bénédictine","type":"activité","markerColor":"blue","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=49.755601,0.380774&key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=49.755601,0.380774"},{"lat":49.738945,"lng":0.424562,"name":"Toussaint & environs","jour":7,"titre":"Toussaint et Campagne Normande","type":"activité","markerColor":"blue","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=49.738945,0.424562&key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=49.738945,0.424562"},{"lat":49.27643699999999,"lng":-0.70314,"name":"Bayeux","jour":8,"titre":"Transfert vers Bayeux et Tapisserie Historique","type":"activité","markerColor":"blue","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=49.27643699999999,-0.70314&key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=49.27643699999999,-0.70314"},{"lat":49.348608,"lng":-0.844039,"name":"Arromanches-les-Bains & Colleville-sur-Mer","jour":9,"titre":"Plages du Débarquement et Recueillement","type":"activité","markerColor":"blue","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=49.348608,-0.844039&key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=49.348608,-0.844039"},{"lat":48.87997555,"lng":-1.8291199,"name":"Granville & Îles Chausey","jour":11,"titre":"Îles Chausey: Évasion Marine","type":"activité","markerColor":"blue","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=48.87997555,-1.8291199&key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=48.87997555,-1.8291199"},{"lat":48.636063,"lng":-1.511457,"name":"Mont Saint-Michel","jour":12,"titre":"Mont Saint-Michel, Merveille de l'Occident","type":"activité","markerColor":"blue","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=48.636063,-1.511457&key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=48.636063,-1.511457"},{"lat":49.4435261,"lng":1.0984309,"name":"Rouen","jour":13,"titre":"Retour vers l'Est et Rouen, Ville aux Cent Clochers","type":"activité","markerColor":"blue","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=49.4435261,1.0984309&key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=49.4435261,1.0984309"},{"lat":49.0766071,"lng":1.5290156,"name":"Giverny","jour":14,"titre":"Giverny, sur les Traces de Monet","type":"activité","markerColor":"blue","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=49.0766071,1.5290156&key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=49.0766071,1.5290156"},{"lat":48.8575475,"lng":2.3513765,"name":"Paris","jour":15,"titre":"Retour à Paris et Douceur Parisienne","type":"activité","markerColor":"blue","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=48.8575475,2.3513765&key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=48.8575475,2.3513765"},{"lat":49.0078827,"lng":2.5507855,"name":"Paris (CDG)","jour":16,"titre":"Départ de Paris","type":"activité","markerColor":"blue","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=49.0078827,2.5507855&key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=49.0078827,2.5507855"}];
+
+    function initMap() {
+      map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 10,
+        center: { lat: 49.271289063333334, lng: 0.2676578533333333 },
+        zoomControl: true,
+        streetViewControl: false,
+        mapTypeControl: false,
+        fullscreenControl: false,
+        styles: [{ featureType: "poi", elementType: "labels", stylers: [{ visibility: "off" }] }]
+      });
+
+      const days = [...new Set(locations.map(l => l.jour))].sort((a,b) => a - b);
+      const filterContainer = document.getElementById('day-filters');
+      days.forEach(day => {
+        const btn = document.createElement('button');
+        btn.className = 'filter-btn';
+        btn.innerText = 'Jour ' + day;
+        btn.onclick = function() { filterByDay(day, this); };
+        filterContainer.appendChild(btn);
+      });
+
+      locations.forEach(loc => {
+        const marker = new google.maps.Marker({
+          position: { lat: loc.lat, lng: loc.lng },
+          icon: `http://maps.google.com/mapfiles/ms/icons/$${loc.markerColor}-dot.png`,
+          label: { text: String(loc.jour), color: 'white', fontSize: '11px', fontWeight: 'bold' },
+          data: loc
+        });
+
+        marker.addListener('click', () => updateSidebar(loc));
+        markersArray.push(marker);
+      });
+
+      markerCluster = new markerClusterer.MarkerClusterer({ map, markers: markersArray });
+    }
+
+    function updateSidebar(poi) {
+      const container = document.getElementById('poi-content');
+      document.getElementById('sidebar').classList.add('expanded');
+      
+      container.innerHTML = `
+        <div class="poi-detail">
+          <button class="close-details" onclick="closeSidebar()">×</button>
+          <img src="${poi.streetViewUrl}" class="poi-image">
+          <div class="poi-body">
+            <div class="badge-container">
+              <span class="badge badge-day">Jour ${poi.jour}</span>
+              <span class="badge">${poi.type}</span>
+            </div>
+            <h2>${poi.name}</h2>
+            <p class="poi-description">${poi.titre}</p>
+          </div>
+          <div class="btn-group">
+            <a href="https://www.google.com/maps/dir/?api=1&destination=${poi.lat},${poi.lng}" target="_blank" class="btn btn-main">S'y rendre</a>
+            <a href="https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=$${poi.lat},${poi.lng}" target="_blank" class="btn btn-outline">Street View</a>
+          </div>
+        </div>
+      `;
+      map.panTo({ lat: poi.lat, lng: poi.lng });
+    }
+
+    function closeSidebar() {
+      document.getElementById('poi-content').innerHTML = '<div class="placeholder">Cliquez sur une étape pour voir le programme.</div>';
+      document.getElementById('sidebar').classList.remove('expanded');
+    }
+
+    function filterByDay(day, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filtered = day === 'all' ? markersArray : markersArray.filter(m => m.data.jour === day);
+      markerCluster.clearMarkers();
+      markerCluster.addMarkers(filtered);
+
+      if (filtered.length > 0) {
+        const bounds = new google.maps.LatLngBounds();
+        filtered.forEach(m => bounds.extend(m.getPosition()));
+        map.fitBounds(bounds);
+        
+        if (day !== 'all') {
+          updateSidebar(filtered[0].data);
+        } else {
+          closeSidebar();
+        }
+      }
+    }
+  </script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI&callback=initMap"></script>
+</body>
+</html>
